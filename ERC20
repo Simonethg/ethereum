@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: MIT 
 pragma solidity ^0.8.2;
 
 contract Token {
@@ -5,7 +6,7 @@ contract Token {
     mapping(address => mapping(address => uint)) public allowance;
     uint public totalSupply = 10000 * 10 ** 18;
     string public name = "My Token";
-    string public symbol = "TKN";
+    string public symbol = "QAA";
     uint public decimals = 18;
     
     event Transfer(address indexed from, address indexed to, uint value);
@@ -15,7 +16,7 @@ contract Token {
         balances[msg.sender] = totalSupply;
     }
     
-    function balanceOf(address owner) public returns(uint) {
+    function balanceOf(address owner) public view  returns(uint) {
         return balances[owner];
     }
     
